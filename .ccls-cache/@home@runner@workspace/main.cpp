@@ -55,6 +55,7 @@ else
 tail = newNode;
 temp->next = newNode;
 }
+
 void delete_val(int value) {
 if (!head) return;
 Node* temp = head;
@@ -71,6 +72,7 @@ else
 tail = temp->prev;
 delete temp;
 }
+
 void delete_pos(int pos) {
 if (!head) {
 cout << "List is empty." << endl;
@@ -97,11 +99,13 @@ if (!temp->next) {
 pop_back();
 return;
 }
+  
 Node* tempPrev = temp->prev;
 tempPrev->next = temp->next;
 temp->next->prev = tempPrev;
 delete temp;
 }
+
 void push_back(int v) {
 Node* newNode = new Node(v);
 if (!tail)
@@ -122,6 +126,7 @@ head->prev = newNode;
 head = newNode;
 }
 }
+
 void pop_front() {
 if (!head) {
 cout << "List is empty." << endl;
@@ -136,6 +141,7 @@ else
 head = tail = nullptr;
 delete temp;
 }
+
 void pop_back() {
 if (!tail) {
 cout << "List is empty." << endl;
@@ -150,6 +156,7 @@ else
 head = tail = nullptr;
 delete temp;
 }
+
 ~DoublyLinkedList() {
 while (head) {
 Node* temp = head;
