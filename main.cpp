@@ -76,39 +76,6 @@ head = tail = nullptr;
 delete temp;
 }
 
-~DoublyLinkedList() {
-while (head) {
-Node* temp = head;
-head = head->next;
-delete temp;
-}
-}
-void print() {
-Node* current = head;
-if (!current) {
-cout << "List is empty." << endl;
-return;
-}
-while (current) {
-cout << current->data << " ";
-current = current->next;
-}
-cout << endl;
-}
-void print_reverse() {
-Node* current = tail;
-if (!current) {
-cout << "List is empty." << endl;
-return;
-}
-while (current) {
-cout << current->data << " ";
-current = current->prev;
-}
-cout << endl;
-}
-};
-
 int size(){
   int count = 0;
   Node* temp = head;
@@ -127,7 +94,34 @@ string get_at_pos(int pos) {
 void delete_pos(int pos){
   if (!head) return;
   if (pos == 0){ pop_front(); return;}
+  Node * temp = head;
+  for (int i = 0; i < pos && temp; ++i)
+    temp =temp->next;
+  if(!temp) return;
+
+  if (temp->prev)
+    temp->prev->next = temp->next;
+  if (temp->next)
+    temp->next->prev = temp->prev;
+  if (temp == tail)
+    tail = temp->prev;
+  delete temp;
 }
+bool empty() {return head == nullptr;}
+
+void print() {
+Node* current = head;
+if (!current) {
+cout << "List is empty." << endl;
+return;
+}
+while (current) {
+cout << current->data << " ";
+current = current->next;
+}
+cout << endl;
+}
+
 int main() {
 cout << MIN_NR + MIN_LS + MAX_NR + MAX_LS; // dummy statement to avoid
 //compiler warning
