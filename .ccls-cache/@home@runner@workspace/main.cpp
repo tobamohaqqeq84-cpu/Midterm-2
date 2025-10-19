@@ -125,7 +125,7 @@ public:
       return;
     }
     while (current) {
-      cout << current->data << "     ";
+      cout << "      " << current->data << "\n";
       current = current->next;
     }
     cout << endl;
@@ -164,7 +164,8 @@ int main() {
     cout << "    " << n << " joins the line." << endl;
     line.push_back(n);
   }
-  cout << "Resulting line: " << endl;
+  cout << "    Resulting line: " << endl;
+
   line.print();
 
   for (int minute = 2; minute <= 20; ++minute) {
@@ -197,7 +198,8 @@ int main() {
       cout << "   " << n << "(VIP) joins the front line." << endl;
       line.push_front(n);
     }
-    cout << "Resulting line: " << endl;
+    cout << "    Resulting line: " << endl;
+
     line.print();
   }
 
@@ -205,3 +207,4 @@ int main() {
   // compiler warning
   return 0;
 }
+//THE END :D
