@@ -108,6 +108,26 @@ current = current->prev;
 cout << endl;
 }
 };
+
+int size(){
+  int count = 0;
+  Node* temp = head;
+  while(temp) {
+    count++;
+    temp = temp->next;
+  }
+  return count;
+}
+string get_at_pos(int pos) {
+  Node* temp = head;
+  for (int i = 0; i < pos && temp; ++i) 
+    temp = temp->next;
+  return temp? temp->data : "";
+}
+void delete_pos(int pos){
+  if (!head) return;
+  if (pos == 0){ pop_front(); return;}
+}
 int main() {
 cout << MIN_NR + MIN_LS + MAX_NR + MAX_LS; // dummy statement to avoid
 //compiler warning
