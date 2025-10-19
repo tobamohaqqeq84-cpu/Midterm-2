@@ -152,7 +152,7 @@ DoublyLinkedList line;
 
 cout << "Store opens:" << endl;
 
-for(int i = 0; i<5; ++i) {
+  for(int i = 0; i < 5; ++i) {
   int randomIndex = rand() % names.size();
   string n = names[randomIndex];
   cout << "    " << n << " joins the line." << endl;
@@ -162,7 +162,9 @@ for(int i = 0; i<5; ++i) {
   line.print();
 
   for(int minute =2; minute <= 20; ++minute) {
-    cout << "Time Step #" <<minute << ":" << endl;
+  cout << "Time Step #" <<minute << ":" << endl;
+
+    if 
 
     if (rand()% 100 <60) {
       int randomIndex = rand() % names.size();
@@ -174,7 +176,20 @@ for(int i = 0; i<5; ++i) {
      cout << "    " << line.back() << " leaves the line." << endl;
         line.pop_back();
       }
-    if(rand)
+    if(rand() % 100 < 10 && !line.empty()) {
+      int randomIndex = rand() % line.size();
+      string leaving = line.get_at_pos(randomIndex);
+      cout << "    " << leaving << " left the line." << endl;
+      line.delete_pos(randomIndex);
+  }
+if (rand() % 100 < 10) {
+  int randomIndex = rand() % names.size();
+  string n = names[randomIndex];
+  cout << "   " << n << "(VIP) joins the front line." << endl;
+  line.push_front(n);
+}
+    cout << "Resulting line: " << endl;
+    line.print();
   }
 
 
