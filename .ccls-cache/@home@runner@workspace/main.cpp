@@ -137,19 +137,28 @@ string back() {
 }};
 
 
+
 int main() {
   srand(time(0));
 
   ifstream file("input.txt");
   vector<string> names;
   string name;
-  while (getline(file, name))
+  while (getline(file, name)){
     if (!name.empty())
       names.push_back(name);
 }
 DoublyLinkedList line;
 
-cout << "Store "
+cout << "Store opens:" << endl;
+
+for(int i = 0; i<5; ++i) {
+  int randomIndex = rand() % names.size();
+  string n = names[randomIndex];
+  cout << "    " << n << " joins the line." << endl;
+  line.push_back(n);
+}
+
 
   
 cout << MIN_NR + MIN_LS + MAX_NR + MAX_LS; // dummy statement to avoid
