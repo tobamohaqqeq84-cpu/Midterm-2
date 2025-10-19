@@ -3,9 +3,11 @@
 // Midterms 2
 
 #include <iostream>
+#include <fstream>
 #include <cstdlib>
 #include <ctime>
 #include <string>
+#include <vector>
 using namespace std;
 
 const int MIN_NR = 10, MAX_NR = 99, MIN_LS = 5, MAX_LS = 20;
@@ -121,8 +123,35 @@ current = current->next;
 }
 cout << endl;
 }
+string front() {
+  if (head != nullptr)
+    return head->data;
+  else
+    return "";
+}
+string back() {
+  if (tail != nullptr)
+    return tail->data;
+  else
+    return "";
+}};
+
 
 int main() {
+  srand(time(0));
+
+  ifstream file("input.txt");
+  vector<string> names;
+  string name;
+  while (getline(file, name))
+    if (!name.empty())
+      names.push_back(name);
+}
+DoublyLinkedList line;
+
+cout << "Store "
+
+  
 cout << MIN_NR + MIN_LS + MAX_NR + MAX_LS; // dummy statement to avoid
 //compiler warning
 return 0;
