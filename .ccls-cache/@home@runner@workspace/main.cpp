@@ -158,6 +158,24 @@ for(int i = 0; i<5; ++i) {
   cout << "    " << n << " joins the line." << endl;
   line.push_back(n);
 }
+  cout << "Resulting line: " << endl;
+  line.print();
+
+  for(int minute =2; minute <= 20; ++minute) {
+    cout << "Time Step #" <<minute << ":" << endl;
+
+    if (rand()% 100 <60) {
+      int randomIndex = rand() % names.size();
+      string n = names[randomIndex];
+      cout << "    " << n << " joins the line." << endl;
+      line.push_back(n);
+    }
+    if (rand()% 100 < 20 && !line.empty()) {
+     cout << "    " << line.back() << " leaves the line." << endl;
+        line.pop_back();
+      }
+    if(rand)
+  }
 
 
   
